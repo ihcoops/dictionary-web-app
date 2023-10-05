@@ -30,14 +30,16 @@ function search(word) {
 }
 
 
-//ADD SYN AND ANT CHECK FOR EACH DEFINITION
-
+let meaningsHTML = "";
 function display(data) {
+  meaningsHTML = "";
   console.log(data);
   word.innerHTML = data["0"].word;
-  phonetic.innerHTML = `<p class="phonetic">${data["0"].phonetic}</p>`;
+  if(data["0"].phonetic) {
+    phonetic.innerHTML = `<p class="phonetic">${data["0"].phonetic}</p>`;
+  }
   const meaningsContainer = document.querySelector('.meanings-container');
-  let meaningsHTML = "";
+  
   data.forEach((piece) => {
     const meanings = piece.meanings;
     meanings.forEach((meaning) => {
@@ -50,23 +52,29 @@ function display(data) {
         if(definition.example) {
           meaningsHTML += `<p>${definition.example}</p>`;
         }
+        synAnt(definition.synonyms, definition.antonyms);
       })
       meaningsHTML += "</ul>"
-      if(meaning.synonyms.length > 0) {
-        meaningsHTML += "<p>Synonyms: ";
-        meaning.synonyms.forEach((synonym) => {
-          meaningsHTML += synonym+", ";
-        })
-        meaningsHTML += "</p>";
-      }
-      if(meaning.antonyms.length > 0) {
-        meaningsHTML += "<p>Antonyms: ";
-        meaning.antonyms.forEach((antonym) => {
-          meaningsHTML += antonym+", ";
-        })
-        meaningsHTML += "</p>";
-      }
+      synAnt(meaning.synonyms, meaning.antonyms);
+      
     })
   })
   meaningsContainer.innerHTML = meaningsHTML;
+}
+
+function synAnt(synonyms, antonyms) {
+  if(synonyms.length > 0) {
+    meaningsHTML += "<p>Synonyms: ";
+    synonyms.forEach((synonym) => {
+      meaningsHTML += synonym+", ";
+    })
+    meaningsHTML += "</p>";
+  }
+  if(antonyms.length > 0) {
+    meaningsHTML += "<p>Antonyms: ";
+    antonyms.forEach((antonym) => {
+      meaningsHTML += antonym+", ";
+    })
+    meaningsHTML += "</p>";
+  }
 }
