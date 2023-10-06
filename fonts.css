@@ -1,0 +1,27 @@
+/*
+Sans-serif
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+/*
+Serif
+*/
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+/*
+Monospace
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+.sans-serif-font {
+    font-family: 'Roboto', sans-serif;
+}
+
+.serif-font {
+    font-family: 'EB Garamond', serif;
+}
+
+.mono-font {
+    font-family: 'Roboto Mono', monospace;
+}

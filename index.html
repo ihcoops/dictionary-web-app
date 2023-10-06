@@ -1,22 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dictionary</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="themes.css">
 </head>
-<body>
-    <input id="search-bar" type="text" placeholder="search">
+
+<body class="sans-serif-font light-theme">
+
+    <label for="font">Font</label>
+    <select name="font" id="font">
+        <option value="sans-serif-font">Sans-serif</option>
+        <option value="serif-font">Serif</option>
+        <option value="mono-font">Monospace</option>
+    </select>
+
+    <label for="theme">Theme</label>
+    <select name="theme" id="theme">
+        <option value="light-theme">Light</option>
+        <option value="dark-theme">Dark</option>
+        <option value="desert-theme">Desert</option>
+        <option value="glacier-theme">Glacier</option>
+    </select>
+
+    <input id="search-bar" type="text" placeholder="search" onkeydown="
+        handleKey(event);
+        ">
     <button class="search-button">search</button>
     <div class="header-container">
         <h1 class="word"></h1>
         <h2 class="phonetic"></h2>
     </div>
-    
+
     <div class="meanings-container">
-        
+
     </div>
 
-    <script src="script.js"></script>
+    <script src="fonts.js"></script>
+    <script src="themes.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>

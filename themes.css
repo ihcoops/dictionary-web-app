@@ -1,0 +1,19 @@
+.light-theme {
+    background-color: white;
+    color: black;
+}
+
+.dark-theme {
+    background-color: black;
+    color: white;   
+}
+
+.desert-theme {
+    background-color: rgb(230, 168, 87);
+    color: black;   
+}
+
+.glacier-theme {
+    background-color: rgb(87, 158, 230);
+    color: white;   
+}

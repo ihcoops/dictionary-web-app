@@ -6,10 +6,16 @@ searchBar.defaultValue = 'keyboard';
 const word = document.querySelector('.word');
 const phonetic = document.querySelector('.phonetic')
 
+
 searchButton.addEventListener('click', () => {
   search(searchBar.value);
 });
 
+function handleKey(event) {
+  if(event.key === 'Enter') {
+    search(searchBar.value);
+  }
+}
 function search(word) {
   fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
     .then(response => {
@@ -35,11 +41,11 @@ function display(data) {
   meaningsHTML = "";
   console.log(data);
   word.innerHTML = data["0"].word;
-  if(data["0"].phonetic) {
+  if (data["0"].phonetic) {
     phonetic.innerHTML = `<p class="phonetic">${data["0"].phonetic}</p>`;
   }
   const meaningsContainer = document.querySelector('.meanings-container');
-  
+
   data.forEach((piece) => {
     const meanings = piece.meanings;
     meanings.forEach((meaning) => {
@@ -49,31 +55,31 @@ function display(data) {
       meaningsHTML += "<ul>"
       definitions.forEach((definition) => {
         meaningsHTML += `<li>${definition.definition}</li>`;
-        if(definition.example) {
+        if (definition.example) {
           meaningsHTML += `<p>${definition.example}</p>`;
         }
         synAnt(definition.synonyms, definition.antonyms);
       })
       meaningsHTML += "</ul>"
       synAnt(meaning.synonyms, meaning.antonyms);
-      
+
     })
   })
   meaningsContainer.innerHTML = meaningsHTML;
 }
 
 function synAnt(synonyms, antonyms) {
-  if(synonyms.length > 0) {
+  if (synonyms.length > 0) {
     meaningsHTML += "<p>Synonyms: ";
     synonyms.forEach((synonym) => {
-      meaningsHTML += synonym+", ";
+      meaningsHTML += synonym + ", ";
     })
     meaningsHTML += "</p>";
   }
-  if(antonyms.length > 0) {
+  if (antonyms.length > 0) {
     meaningsHTML += "<p>Antonyms: ";
     antonyms.forEach((antonym) => {
-      meaningsHTML += antonym+", ";
+      meaningsHTML += antonym + ", ";
     })
     meaningsHTML += "</p>";
   }
