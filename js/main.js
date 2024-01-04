@@ -1,10 +1,12 @@
 const searchBar = document.getElementById('search-bar');
 const searchButton = document.querySelector('.search-button');
 
-searchBar.defaultValue = 'keyboard';
+searchBar.defaultValue = 'hello';
 
 const word = document.querySelector('.word');
-const phonetic = document.querySelector('.phonetic')
+const phonetic = document.querySelector('.phonetic');
+
+search("hello");
 
 
 searchButton.addEventListener('click', () => {
@@ -31,7 +33,7 @@ function search(word) {
     })
     .catch(error => {
       // Handle any errors here
-      console.error(error); // Example: Logging the error to the console
+      console.error(error);
     });
 }
 
@@ -42,21 +44,21 @@ function display(data) {
   console.log(data);
   word.innerHTML = data["0"].word;
   if (data["0"].phonetic) {
-    phonetic.innerHTML = `<p class="phonetic">${data["0"].phonetic}</p>`;
+    phonetic.innerHTML = `${data["0"].phonetic}`;
   }
   const meaningsContainer = document.querySelector('.meanings-container');
 
   data.forEach((piece) => {
     const meanings = piece.meanings;
     meanings.forEach((meaning) => {
-      meaningsHTML += `<h3>${meaning.partOfSpeech}</h3>`;
-      meaningsHTML += "<h4>meaning</h4>";
+      meaningsHTML += `<div class="part-of-speech"><h3>${meaning.partOfSpeech}</h3><div class="divider"></div></div>`;
+      meaningsHTML += "<h4>Meaning</h4>";
       const definitions = meaning.definitions;
       meaningsHTML += "<ul>"
       definitions.forEach((definition) => {
         meaningsHTML += `<li>${definition.definition}</li>`;
         if (definition.example) {
-          meaningsHTML += `<p>${definition.example}</p>`;
+          meaningsHTML += `<p class = "gray">"${definition.example}"</p>`;
         }
         synAnt(definition.synonyms, definition.antonyms);
       })
@@ -70,17 +72,27 @@ function display(data) {
 
 function synAnt(synonyms, antonyms) {
   if (synonyms.length > 0) {
-    meaningsHTML += "<p>Synonyms: ";
+    meaningsHTML += `<h4 class = "gray">Synonyms&emsp;<span class="synonyms">`;
+    let i = 0;
     synonyms.forEach((synonym) => {
-      meaningsHTML += synonym + ", ";
+      meaningsHTML += synonym;
+      if(i != synonyms.length -1) {
+        meaningsHTML += ", "
+      }
+      i++;
     })
-    meaningsHTML += "</p>";
+    meaningsHTML += "</span></h4>";
   }
   if (antonyms.length > 0) {
-    meaningsHTML += "<p>Antonyms: ";
+    meaningsHTML += `<h4 class = "gray">Antonyms&emsp;<span class="synonyms">`;
+    let i = 0;
     antonyms.forEach((antonym) => {
-      meaningsHTML += antonym + ", ";
+      meaningsHTML += antonym;
+      if(i != antonyms.length -1) {
+        meaningsHTML += ", "
+      }
+      i++;
     })
-    meaningsHTML += "</p>";
+    meaningsHTML += "</span></h4>";
   }
 }

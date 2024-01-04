@@ -1,5 +1,5 @@
 /********************************
-* General Reset
+* GENERAL RESET
 ********************************/
 
 * {
@@ -19,4 +19,136 @@ button,
 textarea,
 select {
     font: inherit;
+    color: inherit;
 }
+
+/********************************
+* STYLING
+********************************/
+
+.card-container {
+    display:flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* border: solid red 3px; */
+}
+
+.card {
+    width: 700px;
+}
+
+.header {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+select {
+    background: rgba(0,0,0,0);
+    border: none;
+    cursor: pointer;
+}
+
+*:focus {
+    outline: none;
+}
+
+.part-of-speech {
+    display:flex;
+  flex-direction:row;
+   align-items: center;
+}
+
+
+.divider{
+    flex-grow:1;
+    height: 1.125px;
+    background-color: rgb(226, 226, 226);
+    margin-left: 18px;
+  }
+
+/*
+h1 = word
+h2 = phonetic
+h3 = part of speech
+h4 = "meaning"
+*/
+
+h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+
+h2 {
+    color: rgb(164, 69, 237);
+}
+
+h3 {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 20px;
+    color: rgb(117, 117, 117);
+    font-weight: 400;
+}
+
+p, ul, li {
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 16px;
+}
+
+.synonyms {
+    color: rgb(164, 69, 237);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.gray {
+    color: rgb(117, 117, 117);
+}
+
+.input-container {
+    display: block;
+}
+
+.search-bar {
+    border: none;
+    background-color: rgb(244, 244, 244);
+    padding: 14px 20px;
+    border-radius: 14px;
+    font-size: 20px;
+    font-weight: 700;
+    display: block;
+    width: 100%;
+}
+
+.search-icon {
+    width: 20px;
+    filter: invert(33%) sepia(87%) saturate(3241%) hue-rotate(257deg) brightness(97%) contrast(92%);
+    /* computer using https://codepen.io/sosuke/pen/Pjoqqp */
+}
+
+
+
+/* Color bullet */
+
+ul {
+    list-style: none;
+  }
+  
+  ul li::before {
+    content: "\2022";
+    color: rgb(164, 69, 237); 
+    font-weight: bold; 
+    display: inline-block;
+    width: 24px; 
+    margin-left: -24px; 
+  }
+
+
