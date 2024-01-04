@@ -59,6 +59,15 @@ function display(data) {
   if (data["0"].phonetic) {
     phonetic.innerHTML = `${data["0"].phonetic}`;
   }
+  else if(data["0"].phonetics){
+    const phonetics = data["0"].phonetics;
+    for(let phoneticPiece of phonetics) {
+      if(phoneticPiece.text) {
+        phonetic.innerHTML = phoneticPiece.text;
+        break;
+      }
+    }
+  }
   
 
   data.forEach((piece) => {

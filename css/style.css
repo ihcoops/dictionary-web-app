@@ -22,6 +22,7 @@ select {
     color: inherit;
 }
 
+
 /********************************
 * STYLING
 ********************************/
@@ -42,6 +43,7 @@ select {
 
 .card {
     width: 700px;
+    margin: 20px;
 }
 
 .header {
@@ -165,6 +167,7 @@ h1 {
     font-size: 60px;
     font-weight: 700;
     margin-bottom: 0px;
+    margin-top: -30px;
 }
 
 h2 {
@@ -221,6 +224,7 @@ p, ul, li {
     background-repeat: no-repeat;
     background-position: calc(100% - 20px) center;
     background-size: 20px;
+    caret-color: var(--purple);
 }
 
 .search-icon {
@@ -251,4 +255,57 @@ ul {
     margin-left: -24px; 
   }
 
+/********************************
+* RESPONSIVENESS
+********************************/
 
+@media(max-width: 700px) {
+  .card {
+    margin: 10px;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 0px;
+    margin-top: -30px;
+}
+
+h2 {
+    color: var(--purple);
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 16px;
+    color: var(--dark-gray);
+    font-weight: 400;
+}
+
+h5 {
+  font-size: 16px;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 80px;
+}
+
+
+p, ul, li {
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 12px;
+}
+
+.synonyms {
+    color: var(--purple);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+}
