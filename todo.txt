@@ -1,6 +1,2 @@
-add source urls?
-finish styling
-add dark theme + slider
-add error page
 responsiveness
 fix phonetic display for some words?

@@ -16,28 +16,35 @@
   <div class="card-container">
     <div class="card">
       <div class="header">
-        <img src="logo.svg">
-        <label for="font"></label>
-        <select name="font" id="font">
-          <option value="sans-serif-font" class="sans-serif-font">Sans-serif</option>
-          <option value="serif-font" class="serif-font">Serif</option>
-          <option value="mono-font" class="mono-font">Monospace</option>
-        </select>
+        <img src="/images/logo.svg">
 
-        <label for="theme"></label>
-        <select class="accent-color" name="theme" id="theme">
-          <option value="light-theme">Light</option>
-          <option value="dark-theme">Dark</option>
-          <option value="desert-theme">Desert</option>
-          <option value="glacier-theme">Glacier</option>
-        </select>
+        <div class="options-container">
+          <label for="font"></label>
+          <select name="font" id="font">
+            <option value="sans-serif-font" class="sans-serif-font">Sans-serif</option>
+            <option value="serif-font" class="serif-font">Serif</option>
+            <option value="mono-font" class="mono-font">Monospace</option>
+          </select>
+  
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+          <img src="/images/dark-icon.svg">
+        </div>
       </div>
       <div class="input-container">
         <input class="search-bar" id="search-bar" type="text" placeholder="search" onkeydown="
         handleKey(event);
         ">
       </div>
-      <div class="header-container">
+
+      <div class="error-container">
+        <h5 class="error-title"></h5>
+        <p class="error-body"></p>
+      </div>
+      
+      <div class="word-container">
         <h1 class="word"></h1>
         <h2 class="phonetic"></h2>
       </div>

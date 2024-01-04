@@ -1,31 +1,15 @@
 .light-theme {
     background-color: white;
     color: black;
-    .accent-color {
-        color:purple;
+    .search-bar {
+        background-color: rgb(244, 244, 244);
     }
 }
 
 .dark-theme {
     background-color: black;
     color: white;
-    .accent-color {
-        color:yellow;
-    }   
-}
-
-.desert-theme {
-    background-color: rgb(230, 168, 87);
-    color: black;  
-    .accent-color {
-        color: red;
-    } 
-}
-
-.glacier-theme {
-    background-color: rgb(87, 158, 230);
-    color: white; 
-    .accent-color {
-        color: greenyellow;
+    .search-bar {
+        background-color: rgb(65, 65, 65);
     }
 }

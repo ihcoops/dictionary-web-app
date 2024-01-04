@@ -5,6 +5,10 @@ searchBar.defaultValue = 'hello';
 const word = document.querySelector('.word');
 const phonetic = document.querySelector('.phonetic');
 
+const errorTitle = document.querySelector('.error-title');
+const errorBody = document.querySelector('.error-body');
+const meaningsContainer = document.querySelector('.meanings-container');
+
 search("hello");
 
 function handleKey(event) {
@@ -18,6 +22,7 @@ function search(word) {
       if (response.ok) {
         return response.json(); // Parse the response data as JSON
       } else {
+        displayError();
         throw new Error('API request failed');
       }
     })
@@ -31,16 +36,30 @@ function search(word) {
     });
 }
 
+function displayError() {
+
+  console.log("HELLO");
+
+  word.innerHTML = "";
+  phonetic.innerHTML = "";
+  meaningsContainer.innerHTML = "";
+  
+  errorTitle.innerHTML = "No Definitions Found";
+  errorBody.innerHTML = "Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at later time or head to the web instead.";
+  
+}
 
 let meaningsHTML = "";
 function display(data) {
+  errorTitle.innerHTML = "";
+  errorBody.innerHTML = "";
   meaningsHTML = "";
   console.log(data);
   word.innerHTML = data["0"].word;
   if (data["0"].phonetic) {
     phonetic.innerHTML = `${data["0"].phonetic}`;
   }
-  const meaningsContainer = document.querySelector('.meanings-container');
+  
 
   data.forEach((piece) => {
     const meanings = piece.meanings;
