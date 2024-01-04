@@ -1,5 +1,4 @@
 const searchBar = document.getElementById('search-bar');
-const searchButton = document.querySelector('.search-button');
 
 searchBar.defaultValue = 'hello';
 
@@ -7,11 +6,6 @@ const word = document.querySelector('.word');
 const phonetic = document.querySelector('.phonetic');
 
 search("hello");
-
-
-searchButton.addEventListener('click', () => {
-  search(searchBar.value);
-});
 
 function handleKey(event) {
   if(event.key === 'Enter') {

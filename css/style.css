@@ -39,15 +39,19 @@ select {
 }
 
 .header {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 select {
     background: rgba(0,0,0,0);
     border: none;
     cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 *:focus {

@@ -18,10 +18,10 @@
       <div class="header">
         <img src="logo.svg">
         <label for="font"></label>
-        <select class="accent-color" name="font" id="font">
-          <option value="sans-serif-font">Sans-serif</option>
-          <option value="serif-font">Serif</option>
-          <option value="mono-font">Monospace</option>
+        <select name="font" id="font">
+          <option value="sans-serif-font" class="sans-serif-font">Sans-serif</option>
+          <option value="serif-font" class="serif-font">Serif</option>
+          <option value="mono-font" class="mono-font">Monospace</option>
         </select>
 
         <label for="theme"></label>
@@ -36,7 +36,6 @@
         <input class="search-bar" id="search-bar" type="text" placeholder="search" onkeydown="
         handleKey(event);
         ">
-        <button class="search-button">search</button>
       </div>
       <div class="header-container">
         <h1 class="word"></h1>
