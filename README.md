@@ -5,7 +5,7 @@ This is a solution to the [Dictionary web app challenge on Frontend Mentor](http
 
 ### Links
 
-- Live Site URL: [Live Site](https://ihcoops.github.io/advice-generator-app/)
+- Live Site URL: [Live Site](https://ihcoops.github.io/dictionary-web-app/)
 
 ### Screenshot
 

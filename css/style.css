@@ -220,7 +220,7 @@ p, ul, li {
     font-size: 20px;
     font-weight: 700;
     width: 100%;
-    background-image: url("images/search-icon.png");
+    background-image: url("/images/search-icon.png");
     background-repeat: no-repeat;
     background-position: calc(100% - 20px) center;
     background-size: 20px;
