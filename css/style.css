@@ -113,9 +113,7 @@ p, ul, li {
     color: rgb(117, 117, 117);
 }
 
-.input-container {
-    display: block;
-}
+
 
 .search-bar {
     border: none;
@@ -124,14 +122,22 @@ p, ul, li {
     border-radius: 14px;
     font-size: 20px;
     font-weight: 700;
-    display: block;
     width: 100%;
+    background-image: url("/search-icon.png");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 20px) center;
+    background-size: 20px;
 }
 
 .search-icon {
     width: 20px;
+    height: 20px;
     filter: invert(33%) sepia(87%) saturate(3241%) hue-rotate(257deg) brightness(97%) contrast(92%);
     /* computer using https://codepen.io/sosuke/pen/Pjoqqp */
+}
+
+.search-button {
+    border: none;
 }
 
 
