@@ -33,15 +33,17 @@ body {
 :root {
   --purple: rgb(164, 69, 237);
   --light-gray: rgb(226, 226, 226);
-  --dark-gray: rgb(117, 117, 117);
+  --gray: rgb(117, 117, 117);
+  --off-white: rgb(244, 244, 244);
+  --dark-gray: rgb(65, 65, 65);
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
 }
 
 .card-container {
   display: flex;
-  /* min-height: 100vh; */
   justify-content: center;
   align-items: center;
-  /* border: solid red 3px; */
 }
 
 .card {
@@ -102,7 +104,7 @@ select {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--dark-gray);
+  background-color: var(--gray);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -182,7 +184,7 @@ h3 {
 
 h4 {
   font-size: 20px;
-  color: var(--dark-gray);
+  color: var(--gray);
   font-weight: 400;
 }
 
@@ -208,7 +210,7 @@ li {
 }
 
 .gray {
-  color: var(--dark-gray);
+  color: var(--gray);
 }
 
 .input-container {
@@ -220,22 +222,18 @@ li {
   border: none;
   cursor: pointer;
   width: 60px;
-  background-color: rgb(244, 244, 244);
+  background-color: var(--off-white);
   border-radius: 0px 14px 14px 0px;
 }
 
 .search-bar {
   border: none;
-  background-color: rgb(244, 244, 244);
+  background-color: var(--off-white);
   padding: 14px 20px;
   border-radius: 14px 0px 0px 14px;
   font-size: 20px;
   font-weight: 700;
   width: 100%;
-  /* background-image: url("search-icon.png");
-    background-repeat: no-repeat;
-    background-position: calc(100% - 20px) center;
-    background-size: 20px; */
   caret-color: var(--purple);
 }
 
@@ -244,7 +242,7 @@ li {
   height: 20px;
   filter: invert(33%) sepia(87%) saturate(3241%) hue-rotate(257deg)
     brightness(97%) contrast(92%);
-  /* computer using https://codepen.io/sosuke/pen/Pjoqqp */
+  /* computed using https://codepen.io/sosuke/pen/Pjoqqp */
 }
 
 .search-button {
@@ -295,7 +293,7 @@ ul li::before {
 
   h4 {
     font-size: 16px;
-    color: var(--dark-gray);
+    color: var(--gray);
     font-weight: 400;
   }
 

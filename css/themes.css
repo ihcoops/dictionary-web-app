@@ -1,15 +1,10 @@
-.light-theme {
-  background-color: white;
-  color: black;
-  .search-bar {
-    background-color: rgb(244, 244, 244);
-  }
-}
-
 .dark-theme {
-  background-color: black;
-  color: white;
+  background-color: var(--black);
+  color: var(--white);
   .search-bar {
-    background-color: rgb(65, 65, 65);
+    background-color: var(--dark-gray);
+  }
+  .search-button {
+    background-color: var(--dark-gray);
   }
 }

@@ -1,7 +1,5 @@
 const searchBar = document.getElementById("search-bar");
 
-searchBar.defaultValue = "hello";
-
 const word = document.querySelector(".word");
 const phonetic = document.querySelector(".phonetic");
 
@@ -11,21 +9,28 @@ const meaningsContainer = document.querySelector(".meanings-container");
 
 const searchButton = document.querySelector(".search-button");
 
-searchButton.addEventListener("click", () => search(searchBar.value));
-
+searchBar.defaultValue = "hello";
 search("hello");
+
+/*
+Both pressing search icon AND pressing "enter" on keyboard allow search
+*/
+searchButton.addEventListener("click", () => search(searchBar.value));
 
 function handleKey(event) {
   if (event.key === "Enter") {
     search(searchBar.value);
   }
 }
+
+//API CALL
 function search(word) {
   fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
     .then((response) => {
       if (response.ok) {
         return response.json(); // Parse the response data as JSON
       } else {
+        //If no such word exists in dictionary, display error message
         displayError();
         throw new Error("API request failed");
       }
@@ -40,6 +45,7 @@ function search(word) {
     });
 }
 
+//function for displaying error message
 function displayError() {
   console.log("HELLO");
 
@@ -57,8 +63,11 @@ function display(data) {
   errorTitle.innerHTML = "";
   errorBody.innerHTML = "";
   meaningsHTML = "";
+  //log JSON to console and parse data
   console.log(data);
   word.innerHTML = data["0"].word;
+
+  //2 different spots the phonetic could be in the JSON, find it
   if (data["0"].phonetic) {
     phonetic.innerHTML = `${data["0"].phonetic}`;
   } else if (data["0"].phonetics) {
@@ -71,6 +80,7 @@ function display(data) {
     }
   }
 
+  //parse and print all meanings and definitions
   data.forEach((piece) => {
     const meanings = piece.meanings;
     meanings.forEach((meaning) => {
@@ -92,6 +102,7 @@ function display(data) {
   meaningsContainer.innerHTML = meaningsHTML;
 }
 
+//function for displaying synonyms and antonyms
 function synAnt(synonyms, antonyms) {
   if (synonyms.length > 0) {
     meaningsHTML += `<h4 class = "gray">Synonyms&emsp;<span class="synonyms">`;
