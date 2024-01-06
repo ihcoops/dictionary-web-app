@@ -1,65 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dictionary</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dictionary</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/themes.css" />
+  </head>
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/themes.css">
-</head>
+  <body class="sans-serif-font light-theme">
+    <div class="card-container">
+      <div class="card">
+        <div class="header">
+          <img src="images/logo.svg" />
 
-<body class="sans-serif-font light-theme">
+          <div class="options-container">
+            <label for="font"></label>
+            <select name="font" id="font">
+              <option value="sans-serif-font" class="sans-serif-font">
+                Sans-serif
+              </option>
+              <option value="serif-font" class="serif-font">Serif</option>
+              <option value="mono-font" class="mono-font">Monospace</option>
+            </select>
 
-  <div class="card-container">
-    <div class="card">
-      <div class="header">
-        <img src="images/logo.svg">
-
-        <div class="options-container">
-          <label for="font"></label>
-          <select name="font" id="font">
-            <option value="sans-serif-font" class="sans-serif-font">Sans-serif</option>
-            <option value="serif-font" class="serif-font">Serif</option>
-            <option value="mono-font" class="mono-font">Monospace</option>
-          </select>
-  
-          <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-          </label>
-          <img src="images/dark-icon.svg">
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+            <img src="images/dark-icon.svg" />
+          </div>
         </div>
-      </div>
-      <div class="input-container">
-        <input class="search-bar" id="search-bar" type="text" placeholder="search" onkeydown="
+        <div class="input-container">
+          <input
+            class="search-bar"
+            id="search-bar"
+            type="text"
+            placeholder="search"
+            onkeydown="
         handleKey(event);
-        ">
-      </div>
+        "
+          />
+          <button class="search-button">
+            <img class="search-icon" src="images/search-icon.png" />
+          </button>
+        </div>
 
-      <div class="error-container">
-        <h5 class="error-title"></h5>
-        <p class="error-body"></p>
-      </div>
-      
-      <div class="word-container">
-        <h1 class="word"></h1>
-        <h2 class="phonetic"></h2>
-      </div>
+        <div class="error-container">
+          <h5 class="error-title"></h5>
+          <p class="error-body"></p>
+        </div>
 
-      <div class="meanings-container">
+        <div class="word-container">
+          <h1 class="word"></h1>
+          <h2 class="phonetic"></h2>
+        </div>
 
+        <div class="meanings-container"></div>
       </div>
     </div>
-  </div>
 
-
-
-  <script src="js/fonts.js"></script>
-  <script src="js/themes.js"></script>
-  <script src="js/main.js"></script>
-</body>
-
+    <script src="js/fonts.js"></script>
+    <script src="js/themes.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

@@ -3,25 +3,24 @@
 ********************************/
 
 * {
-    box-sizing: border-box;
-    /* margin: 0;
+  box-sizing: border-box;
+  /* margin: 0;
     padding: 0; */
 }
 
 p,
 h1,
 h2 {
-    overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 input,
 button,
 textarea,
 select {
-    font: inherit;
-    color: inherit;
+  font: inherit;
+  color: inherit;
 }
-
 
 /********************************
 * STYLING
@@ -31,136 +30,130 @@ body {
   transition: 0.3s;
 }
 
-
-
 :root {
-    --purple: rgb(164, 69, 237);
-    --light-gray: rgb(226, 226, 226);
-    --dark-gray: rgb(117, 117, 117);
-  }
+  --purple: rgb(164, 69, 237);
+  --light-gray: rgb(226, 226, 226);
+  --dark-gray: rgb(117, 117, 117);
+}
 
 .card-container {
-    display:flex;
-    /* min-height: 100vh; */
-    justify-content: center;
-    align-items: center;
-    /* border: solid red 3px; */
-    
+  display: flex;
+  /* min-height: 100vh; */
+  justify-content: center;
+  align-items: center;
+  /* border: solid red 3px; */
 }
 
 .card {
-    width: 700px;
-    margin: 20px;
+  width: 700px;
+  margin: 20px;
 }
 
 .header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 40px;
-    margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 .options-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
 }
 
 select {
-    background: rgba(0,0,0,0);
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 700;
-    margin-right: 34px;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  margin-right: 34px;
 }
 
-
-
 *:focus {
-    outline: none;
+  outline: none;
 }
 
 /* TOGGLE BUTTON https://www.w3schools.com/howto/howto_css_switch.asp */
 /* The switch - the box around the slider */
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 36px;
-    height: 17px;
-    margin-right: 20px;
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--dark-gray);
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 13px;
-    width: 13px;
-    left: 2px;
-    bottom: 2px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: var(--purple);
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px var(--purple);
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(18px);
-    -ms-transform: translateX(18px);
-    transform: translateX(18px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
-
-.part-of-speech {
-    display:flex;
-  flex-direction:row;
-   align-items: center;
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 17px;
+  margin-right: 20px;
 }
 
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
-.divider{
-    flex-grow:1;
-    height: 1.125px;
-    background-color: var(--light-gray);
-    margin-left: 18px;
-  }
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--dark-gray);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--purple);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--purple);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  transform: translateX(18px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.part-of-speech {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.divider {
+  flex-grow: 1;
+  height: 1.125px;
+  background-color: var(--light-gray);
+  margin-left: 18px;
+}
 
 /*
 h1 = word
@@ -171,26 +164,26 @@ h5 = error title
 */
 
 h1 {
-    font-size: 60px;
-    font-weight: 700;
-    margin-bottom: 0px;
-    margin-top: -30px;
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 0px;
+  margin-top: -30px;
 }
 
 h2 {
-    color: var(--purple);
+  color: var(--purple);
 }
 
 h3 {
-    font-size: 24px;
-    font-style: italic;
-    font-weight: 700;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 700;
 }
 
 h4 {
-    font-size: 20px;
-    color: var(--dark-gray);
-    font-weight: 400;
+  font-size: 20px;
+  color: var(--dark-gray);
+  font-weight: 400;
 }
 
 h5 {
@@ -200,73 +193,84 @@ h5 {
   margin-top: 80px;
 }
 
-
-p, ul, li {
-    font-size: 18px;
-    margin-top: 0px;
-    margin-bottom: 16px;
+p,
+ul,
+li {
+  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 16px;
 }
 
 .synonyms {
-    color: var(--purple);
-    font-weight: 700;
-    font-size: 20px;
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .gray {
-    color: var(--dark-gray);
+  color: var(--dark-gray);
 }
 
-
-
-.search-bar {
-    border: none;
-    background-color: rgb(244, 244, 244);
-    padding: 14px 20px;
-    border-radius: 14px;
-    font-size: 20px;
-    font-weight: 700;
-    width: 100%;
-    background-image: url("search-icon.png");
-    background-repeat: no-repeat;
-    background-position: calc(100% - 20px) center;
-    background-size: 20px;
-    caret-color: var(--purple);
-}
-
-.search-icon {
-    width: 20px;
-    height: 20px;
-    filter: invert(33%) sepia(87%) saturate(3241%) hue-rotate(257deg) brightness(97%) contrast(92%);
-    /* computer using https://codepen.io/sosuke/pen/Pjoqqp */
+.input-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .search-button {
-    border: none;
+  border: none;
+  cursor: pointer;
+  width: 60px;
+  background-color: rgb(244, 244, 244);
+  border-radius: 0px 14px 14px 0px;
 }
 
+.search-bar {
+  border: none;
+  background-color: rgb(244, 244, 244);
+  padding: 14px 20px;
+  border-radius: 14px 0px 0px 14px;
+  font-size: 20px;
+  font-weight: 700;
+  width: 100%;
+  /* background-image: url("search-icon.png");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 20px) center;
+    background-size: 20px; */
+  caret-color: var(--purple);
+}
 
+.search-icon {
+  width: 20px;
+  height: 20px;
+  filter: invert(33%) sepia(87%) saturate(3241%) hue-rotate(257deg)
+    brightness(97%) contrast(92%);
+  /* computer using https://codepen.io/sosuke/pen/Pjoqqp */
+}
+
+.search-button {
+  border: none;
+}
 
 /* Color bullet */
 
 ul {
-    list-style: none;
-  }
-  
-  ul li::before {
-    content: "\2022";
-    color: var(--purple); 
-    font-weight: bold; 
-    display: inline-block;
-    width: 24px; 
-    margin-left: -24px; 
-  }
+  list-style: none;
+}
+
+ul li::before {
+  content: "\2022";
+  color: var(--purple);
+  font-weight: bold;
+  display: inline-block;
+  width: 24px;
+  margin-left: -24px;
+}
 
 /********************************
 * RESPONSIVENESS
 ********************************/
 
-@media(max-width: 700px) {
+@media (max-width: 700px) {
   .card {
     margin: 10px;
   }
@@ -276,43 +280,43 @@ ul {
     font-weight: 700;
     margin-bottom: 0px;
     margin-top: -30px;
-}
+  }
 
-h2 {
+  h2 {
     color: var(--purple);
     font-size: 16px;
-}
+  }
 
-h3 {
+  h3 {
     font-size: 20px;
     font-style: italic;
     font-weight: 700;
-}
+  }
 
-h4 {
+  h4 {
     font-size: 16px;
     color: var(--dark-gray);
     font-weight: 400;
-}
+  }
 
-h5 {
-  font-size: 16px;
-  text-align: center;
-  font-weight: 700;
-  margin-top: 80px;
-}
+  h5 {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 80px;
+  }
 
-
-p, ul, li {
+  p,
+  ul,
+  li {
     font-size: 14px;
     margin-top: 0px;
     margin-bottom: 12px;
-}
+  }
 
-.synonyms {
+  .synonyms {
     color: var(--purple);
     font-weight: 700;
     font-size: 16px;
-}
-
+  }
 }
